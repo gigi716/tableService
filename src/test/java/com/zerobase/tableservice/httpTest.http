@@ -1,0 +1,51 @@
+### Post test: signup test
+POST http://localhost:8080/auth/signup
+Content-Type: application/json
+
+{
+  "username": "grace",
+  "password": "grace123!@#",
+  "roles": ["ROLE_MANAGER"]
+}
+
+### Post test: signin test
+POST http://localhost:8080/auth/signin
+Content-Type: application/json
+
+{
+  "username": "grace",
+  "password": "grace123!@#"
+}
+
+
+### Post test: reg store
+POST http://localhost:8080/store/reg
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmFjZSIsInJvbGVzIjpbIlJPTEVfTUFOQUdFUiJdLCJpYXQiOjE3MTQ5MzQxOTEsImV4cCI6MTcxNTAyMDU5MX0.Pmo4HgaGPXHDUeFRoHbSsWXvQ10mtH8ZDmYyt5i6OeKzhcxHxcvHnZIF2KJo7L22uBusGy5sAdMS1f0DylnZYQ
+
+{
+  "storeName": "밥집",
+  "location": "서울시 강동구",
+  "explanation": "맛집"
+}
+
+### Delete test: delete store
+DELETE http://localhost:8080/store/delete
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmFjZSIsInJvbGVzIjpbIlJPTEVfTUFOQUdFUiJdLCJpYXQiOjE3MTQ5MzE0MjYsImV4cCI6MTcxNTAxNzgyNn0.4J0vO5lxLwxYvywaAL_lxajqkvX-2IAUKadb0mafGxxoRN-dxd-EgllXo943G-BE4NYLzyVypUVvExe1l_MPOw
+
+{
+  "storeName": "밥집"
+}
+
+### Update test: update store
+PUT http://localhost:8080/store/update/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJncmFjZSIsInJvbGVzIjpbIlJPTEVfTUFOQUdFUiJdLCJpYXQiOjE3MTQ5MzE0MjYsImV4cCI6MTcxNTAxNzgyNn0.4J0vO5lxLwxYvywaAL_lxajqkvX-2IAUKadb0mafGxxoRN-dxd-EgllXo943G-BE4NYLzyVypUVvExe1l_MPOw
+
+
+{
+  "storeName": "집밥",
+  "location": "서울시 강동구",
+  "explanation": "치킨"
+}
